@@ -15,11 +15,11 @@ export PORT=4790
 
 echo "Stopping old copy of app, if any..."
 
-_build/prod/rel/practice/bin/practice stop || true
+_build/prod/rel/bulls_and_cows/bin/bulls_and_cows stop || true
 
 echo "Starting app..."
 
-_build/prod/rel/practice/bin/practice start
+_build/prod/rel/bulls_and_cows/bin/bulls_and_cows start
 
 # TODO: Add a systemd service file
 #       to start your app on system boot.
