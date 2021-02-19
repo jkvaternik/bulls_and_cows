@@ -28,7 +28,7 @@ const Controls = (props) => {
         value={text}
         onChange={updateGuess}
         onKeyPress={keypress}></input>
-      <button id="enter" onClick={() => {props.guessed(text); setText('')}}>OK</button>
+      <button id="enter" onClick={() => { props.guessed(text); setText('') }}>OK</button>
     </Aux>
   )
 }
