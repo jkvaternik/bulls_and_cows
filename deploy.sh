@@ -29,4 +29,4 @@ mix release
 
 echo "Starting app..."
 
-_build/prod/rel/practice/bin/practice start
+_build/prod/rel/bulls_and_cows/bin/bulls_and_cows start
