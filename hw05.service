@@ -12,7 +12,7 @@ Environment=PROD=true
 Environment=LANG=en_US.UTF-8
 
 WorkingDirectory=/home/bulls/bulls_and_cows
-ExecStart=/bin/bash /home/bulls/bulls_and_cows/start.sh
+ExecStart=_build/prod/rel/bulls_and_cows/bin/bulls_and_cows start
 
 [Install]
 WantedBy=multi-user.target
