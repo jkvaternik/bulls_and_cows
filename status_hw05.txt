@@ -5,7 +5,7 @@ Please fill in answers to the questions below:
 Jaime Kvaternik
 
 2. What hostname did you deploy to? 
-hw05.jk-web.site
+bulls.jk-web.site
 
 3. Which parts of this assignment did you have trouble with, if any?
 Connecting server-side state to the React app.
