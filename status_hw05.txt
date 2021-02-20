@@ -8,7 +8,7 @@ Jaime Kvaternik
 bulls.jk-web.site
 
 3. Which parts of this assignment did you have trouble with, if any?
-Connecting server-side state to the React app.
+Connecting server-side state to the React app. Deploying.
 
 4. What part of your application state is on the server? 
 Secret, list of guesses, list of bulls, whether the game is over or
