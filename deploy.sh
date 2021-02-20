@@ -29,4 +29,10 @@ mix phx.digest
 
 mix release
 
+<<<<<<< HEAD
 PROD=t ./start.sh
+=======
+echo "Starting app..."
+
+_build/prod/rel/bulls_and_cows/bin/bulls_and_cows start
+>>>>>>> dev
