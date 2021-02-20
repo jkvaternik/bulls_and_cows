@@ -21,12 +21,16 @@ fi
 SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE
 
-npm install --prefix ./assets
-npm run deploy --prefix ./assets
+(cd assets && npm install)
+(cd assets && webpack --mode production)
 mix phx.digest
 
+echo "Generating release..."
 mix release
+
+#echo "Stopping old copy of app, if any..."
+#_build/prod/rel/practice/bin/practice stop || true
 
 echo "Starting app..."
 
-_build/prod/rel/bulls_and_cows/bin/bulls_and_cows start
+PROD=t ./start.sh

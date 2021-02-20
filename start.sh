@@ -15,4 +15,10 @@ fi
 SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE
 
-_build/prod/rel/bulls_and_cows/bin/bulls_and_cows start
+echo "Stopping old copy of app, if any..."
+
+_build/prod/rel/practice/bin/practice stop || true
+
+echo "Starting app..."
+
+_build/prod/rel/practice/bin/practice start
