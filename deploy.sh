@@ -23,8 +23,10 @@ fi
 SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE
 
-npm install --prefix ./assets
-npm run deploy --prefix ./assets
+(cd assets && npm install)
+(cd assets && webpack --mode production)
 mix phx.digest
 
 mix release
+
+PROD=t ./start.sh
