@@ -1,7 +1,9 @@
 #!/bin/bash
-# This is deploy.sh from Nat's Scratch repo
 
 export MIX_ENV=prod
+# Common port range for this is 4000-10,000
+# Valid port range for a user app to listen
+# on is something like 1025-32767
 export PORT=4801
 export SECRET_KEY_BASE=insecure
 
@@ -11,7 +13,7 @@ mix compile
 CFGD=$(readlink -f ~/.config/bulls_and_cows)
 
 if [ ! -d "$CFGD" ]; then
-    mkdir -p $CFGD
+    mkdir -p "$CFGD"
 fi
 
 if [ ! -e "$CFGD/base" ]; then
@@ -21,16 +23,8 @@ fi
 SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE
 
-(cd assets && npm install)
-(cd assets && webpack --mode production)
+npm install --prefix ./assets
+npm run deploy --prefix ./assets
 mix phx.digest
 
-echo "Generating release..."
 mix release
-
-#echo "Stopping old copy of app, if any..."
-#_build/prod/rel/practice/bin/practice stop || true
-
-echo "Starting app..."
-
-PROD=t ./start.sh
